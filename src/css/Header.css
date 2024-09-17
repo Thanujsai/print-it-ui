@@ -1,0 +1,35 @@
+/* Header.css */
+
+.header {
+    position: relative;
+    z-index: 1; /* Ensure header is above the background video */
+    width: 100%;
+    background-color: transparent; /* Optional: Semi-transparent background for contrast */
+    color: white; /* Text color for visibility */
+    padding: 2px; /* Padding for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: Shadow for better separation from the video */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .header nav {
+    display: flex;
+    gap: 15px; /* Space between navigation items */
+  }
+  
+  .header a {
+    color: white; /* Link color */
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .header a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

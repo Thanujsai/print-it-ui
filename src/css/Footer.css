@@ -1,0 +1,26 @@
+/* Footer.css */
+
+.footer {
+  position: relative;
+  z-index: 1; /* Ensure footer is above the background video */
+  width: 100%;
+  background-color: transparent; /* Optional: Semi-transparent background for contrast */
+  color: white; /* Text color for visibility */
+  padding: 2px; /* Padding for spacing */
+  text-align: center; /* Centered text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional: Shadow for better separation from the video */
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: white; /* Link color */
+  text-decoration: none;
+  margin: 0 10px; /* Spacing between social icons */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
