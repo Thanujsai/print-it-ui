@@ -10,6 +10,10 @@
     object-fit: cover;
   }
   
+  /* .hero-text {
+    animation: fadeInSlide 2s ease-in-out forwards;
+    opacity: 0;
+  } */
   .overlay {
     position: absolute;
     top: 300px;
@@ -25,10 +29,11 @@
   }
   
   .overlay h1 {
-    font-size: 48px;
+    font-family: 'Suisse Intl';
+    font-size: 30px;
     font-weight: bold;
     color: #090909;
-    text-transform: uppercase;
+    padding-left: 20px;
   }
   
   .overlay button {
@@ -58,19 +63,7 @@
   z-index: -1; /* Place video behind other content */
 }
 
-.content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.content h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.content p {
-  font-size: 1.5rem;
+.description {
+  color: #fc0b0b;
+  padding-left: 20px;
 }

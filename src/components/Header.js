@@ -1,12 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+const fonts = [
+  'Arial, sans-serif',
+  'Courier New, monospace',
+  'Georgia, serif',
+  'Times New Roman, serif',
+  'Verdana, sans-serif',
+  'Dancing Script, cursive'
+];
+
+const colors = [
+  '#003366', // Navy Blue
+  '#FF6F61', // Coral
+  '#FFFFFF', // White
+  '#4B4B4B', // Dark Gray
+  '#FFD700', // Gold
+  '#FFCBA4', // Peach
+  '#98FF98', // Mint Green
+  '#FFD300', // Bright Yellow
+  '#E6E6FA', // Lavender
+  '#FFB6C1'  // Soft Pink
+];
+
 const Header = () => {
+
+  const [fontIndex, setFontIndex] = useState(0);
+  const [colorIndex, setColorIndex] = useState(0);
+
+
+  useEffect(() => {
+    const fontInterval = setInterval(() => {
+      setFontIndex(prevIndex => (prevIndex + 1) % fonts.length);
+    }, 1000);
+
+    const colorInterval = setInterval(() => {
+      setColorIndex(prevIndex => (prevIndex + 1) % colors.length);
+    }, 1000);
+    return () => {
+      clearInterval(fontInterval);
+      clearInterval(colorInterval)
+      
+    };
+  }, []);
+  //<h1 className="printit" style={{ fontFamily: fonts[fontIndex], color: colors[colorIndex] }}>
   return (
     <Nav>
       <LeftMenu>
-        <StyledLink to="/">PRINTIT</StyledLink> 
+        <StyledLink to="/" style={{ fontFamily: fonts[fontIndex], color: colors[colorIndex] }}>PRINTIT</StyledLink> 
       </LeftMenu>
       <RightMenu>
         <StyledLink to="/bikes">Bikes</StyledLink>

@@ -15,6 +15,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -40,4 +41,36 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <style>
+    
+    @font-face {
+        font-family: 'Suisse Intl';
+        src: url(//cowboy.com/cdn/shop/t/33/assets/SuisseIntl-Regular.woff2?v=68561781739542565591710794629) format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        unicode-range: U+000-5FF;
+    }
+
+    @font-face {
+        font-family: 'Suisse Intl';
+        src: url(//cowboy.com/cdn/shop/t/33/assets/SuisseIntl-Book.woff2?v=121715798774563978371710794625) format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+        unicode-range: U+000-5FF;
+    }
+
+    @font-face {
+        font-family: 'Suisse Intl';
+        src: url(//cowboy.com/cdn/shop/t/33/assets/SuisseIntl-SemiBold.woff2?v=118061100492884116221710794630) format('woff2');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+        unicode-range: U+000-5FF;
+    }
+
+    html { font-family: 'Suisse Intl', sans-serif; }
+
+  </style>
 </html>

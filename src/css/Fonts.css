@@ -1,0 +1,13 @@
+/* src/css/fonts.css */
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url(//cowboy.com/cdn/shop/t/33/assets/SuisseIntl-Regular.woff2?v=68561781739542565591710794629) format('woff2');
+    font-weight: 30;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF;
+}
+
+body {
+    font-family: 'Suisse Intl', sans-serif;
+}
