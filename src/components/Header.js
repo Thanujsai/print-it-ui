@@ -83,6 +83,7 @@ const LeftMenu = styled.div`
 
 const RightMenu = styled.div`
   display: flex;
+  padding-left: 1600px;
   margin-right: 20px; /* Add margin to keep it away from the edge */
 `;
 
