@@ -10,10 +10,6 @@
     object-fit: cover;
   }
   
-  /* .hero-text {
-    animation: fadeInSlide 2s ease-in-out forwards;
-    opacity: 0;
-  } */
   .overlay {
     position: absolute;
     top: 300px;
@@ -65,5 +61,19 @@
 
 .description {
   color: #fc0b0b;
+  padding-left: 20px;
+  font-family: Suisse Intl, sans-serif;
+  text-align: left;
+  text-transform: none;
+}
+
+.hero-text {
+  font-family: Suisse Intl, sans-serif;
+  text-align: left;
+  text-transform: none;
+  color:#fc0b0b;
+}
+
+.upload {
   padding-left: 20px;
 }
