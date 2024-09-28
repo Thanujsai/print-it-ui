@@ -48,10 +48,10 @@ const Header = () => {
   return (
     <Nav>
       <LeftMenu>
-        <StyledLink to="/" style={{ fontFamily: fonts[fontIndex], color: colors[colorIndex] }}>PRINTIT</StyledLink> 
+        <StyledLink to="/" style={{fontFamily: 'Dancing Script, cursive'}}>PRINTIT</StyledLink> 
       </LeftMenu>
       <RightMenu>
-        <StyledLink to="/bikes">Bikes</StyledLink>
+        <StyledLink to="/models">Models</StyledLink>
         <StyledLink to="/app">App</StyledLink>
       </RightMenu>
     </Nav>
