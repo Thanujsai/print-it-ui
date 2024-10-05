@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Header from './Header';
 import '../css/UploadPage.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -43,7 +42,6 @@ const UploadPage = () => {
 
   return (
     <MyComponent>
-      <Header />
       <Container>
         <Title>Upload Your 3D Model</Title>
         <Input type="file" accept=".stl,.obj,.fbx,.jpg" onChange={handleFileChange} />

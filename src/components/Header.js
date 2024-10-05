@@ -25,10 +25,8 @@ const colors = [
 ];
 
 const Header = () => {
-
   const [fontIndex, setFontIndex] = useState(0);
   const [colorIndex, setColorIndex] = useState(0);
-
 
   useEffect(() => {
     const fontInterval = setInterval(() => {
@@ -38,21 +36,21 @@ const Header = () => {
     const colorInterval = setInterval(() => {
       setColorIndex(prevIndex => (prevIndex + 1) % colors.length);
     }, 1000);
+
     return () => {
       clearInterval(fontInterval);
-      clearInterval(colorInterval)
-      
+      clearInterval(colorInterval);
     };
   }, []);
-  //<h1 className="printit" style={{ fontFamily: fonts[fontIndex], color: colors[colorIndex] }}>
+
   return (
     <Nav>
       <LeftMenu>
         <StyledLink to="/" style={{fontFamily: 'Dancing Script, cursive'}}>PRINTIT</StyledLink> 
       </LeftMenu>
       <RightMenu>
-        <StyledLink to="/models">Models</StyledLink>
-        <StyledLink to="/app">App</StyledLink>
+        <StyledLink to="/models">MODELS</StyledLink>
+        <StyledLink to="/app">APP</StyledLink>
       </RightMenu>
     </Nav>
   );
@@ -82,6 +80,7 @@ const LeftMenu = styled.div`
 `;
 
 const RightMenu = styled.div`
+  padding-left: 1600px;
   display: flex;
   margin-right: 20px; /* Add margin to keep it away from the edge */
 `;

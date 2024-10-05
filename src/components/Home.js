@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Home.css';
-import Header from './Header';
 import { Button } from 'antd';
 import '../css/Fonts.css'
 import { FaAlignLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const fonts = [
   'Arial, sans-serif',
@@ -62,8 +62,8 @@ const Home = () => {
         <div className="hero-text">
         <h1 className="hero-text" style={{ textAlign: 'left', textTransform: 'none'}}>Turn Your 3D Designs into Reality</h1>
         <p className="description" style={{ textAlign: 'left', textTransform: 'none' }}>
-        We’re two brothers who turned our love for 3D printing into a passion project. Now, you can upload your designs, 
-        choose your materials, and we’ll handle the rest. Whether it's a one-off design or something for fun, we’ve got your back.
+        We’re two brothers who turned our love for 3D printing into a passion project. Now, you can upload your 
+        designs, choose your materials, and we’ll handle the rest. Whether it's a one-off design or something for fun, we’ve got your back.
         </p>
         <div className = 'upload'>
         <Button onClick={Upload}>Upload Your Model</Button>

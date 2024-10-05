@@ -1,6 +1,27 @@
-.product-showcase{
-    padding-top: 20px;
-}
-.back{
-    padding-left: 20px;
-}
+/* ProductShowcase.css */
+
+.slider-containerr {
+    display: flex; /* This enables flexbox layout */
+    flex-direction: column; /* Aligns children in a column */
+    justify-content: center; /* Horizontally centers the carousel */
+    align-items: center; /* Vertically centers the carousel */
+    height: 100vh; /* Takes up the full viewport height */
+    background-color: #f0f0f0; /* Optional: Add a background color for contrast */
+  }
+  
+  .carousel-stylee {
+    width: 150%; /* Adjust the width to fit within the viewport nicely */
+    max-width: 800px; /* Set a maximum width for larger screens */
+  }
+  
+  .photos {
+    width: 150%; /* Make sure images fill the carousel */
+    height: 500px; /* Set a fixed height for the carousel items */
+    object-fit: cover; /* Ensures the image scales properly without distortion */
+  }
+  
+  .back {
+    margin-top: 20px; /* Adds space between carousel and button */
+    z-index: 10; /* Keeps it above other content */
+  }
+  

@@ -32,4 +32,8 @@
   .header a:hover {
     text-decoration: underline; /* Underline on hover */
   }
+
+  .RightMenu {
+    font-family: 'Montserrat', sans-serif;
+  }
   

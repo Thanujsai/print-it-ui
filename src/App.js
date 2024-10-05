@@ -5,6 +5,7 @@ import ProductShowcase from './components/ProductShowcase';
 import Footer from './components/Footer';
 import './css/BackgroundVideoStyles.css'; // Import your CSS file
 import UploadPage from './components/UploadPage';
+import Header from './components/Header';
 
 function App() {
   return (
