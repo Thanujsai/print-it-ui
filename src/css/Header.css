@@ -37,3 +37,25 @@
     font-family: 'Montserrat', sans-serif;
   }
   
+  @media only screen and (max-width: 768px) {
+    .Nav{
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    .LeftMenu {
+      margin-bottom: 10px; /* Add some space between logo and links */
+    }
+  
+    .RightMenu {
+      flex-direction: column;
+      align-items: center;
+      padding: 0; /* Remove padding */
+    }
+  
+    .StyledLink{
+      margin: 5px 0; /* Stack links vertically with margin */
+      font-size: 18px; /* Adjust font size for mobile */
+    }
+  }

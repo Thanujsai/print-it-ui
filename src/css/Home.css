@@ -100,6 +100,11 @@ body, .hero-section h1, .hero-section p {
   .hero-text {
     padding-bottom: 40px; /* Optional: adjust space below hero text */
   }
+
+  .hero-text h1 {
+    color: #4B0082 !important; /* Add !important to override other styles */
+    /*Adding !important ensures that the style will override any other conflicting styles. Since CSS rules cascade and the most specific one usually wins, !important can be used to break through that specificity.*/
+  }
   
   .overlay {
     position: absolute;
@@ -127,6 +132,7 @@ body, .hero-section h1, .hero-section p {
     line-height: 1.5; /* Improve line height for description */
     color: #333; /* Dark gray for readability */
     margin: 10px 0; /* Add margin */
+    display: none;
   }
 
   .upload {

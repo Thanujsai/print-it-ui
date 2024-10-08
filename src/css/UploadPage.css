@@ -1,20 +1,54 @@
+/* UploadPage.css */
+
 .button-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px; /* Adjust the gap as needed */
+  display: flex;
+  align-items: center; /* Center items horizontally */
+  margin: 20px; /* Add some margin around the container */
+}
+
+.button-container button {
+  margin: 10px 10px; /* Space between buttons */
+  padding: 12px 24px; /* Increased padding for better touch targets */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px; /* Larger font size for readability */
+  width: 80%; /* Full width for buttons */
+  max-width: 300px; /* Limit the button width on larger screens */
+}
+
+.button-container button:hover {
+  background-color: #FFFFFF;
+  color: #00008B;
+}
+
+h1 {
+  font-size: 24px; /* Increased title size */
+  text-align: center; /* Center the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+input[type="file"] {
+  margin: 10px 0;
+  width: 80%; /* Full width for the file input */
+  max-width: 300px; /* Limit the file input width on larger screens */
+  padding: 10px; /* Increase padding for better touch targets */
+  font-size: 16px; /* Increase font size for readability */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 20px; /* Adjust title size for mobile */
   }
-  
-  Button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
+
+  .button-container button {
+      font-size: 16px; /* Adjust button font size for mobile */
   }
-  
-  Button:hover {
-    background-color: #000000
-    ;
+
+  input[type="file"] {
+      font-size: 14px; /* Adjust file input font size for mobile */
   }
-  
+}
