@@ -1,0 +1,18 @@
+/* The parent container */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center;     /* Center horizontally */
+    height: 100vh;           /* Full viewport height */
+}
+
+/* The welcome text styling */
+.welcome {
+    margin-bottom: 20px; /* Add some space between the text and the button */
+}
+
+/* You can style the back button as needed */
+.back {
+    cursor: pointer;
+}

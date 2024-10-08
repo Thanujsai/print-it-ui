@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import './css/BackgroundVideoStyles.css'; // Import your CSS file
 import UploadPage from './components/UploadPage';
 import Header from './components/Header';
+import AppPage from './components/AppPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/models" element={<ProductShowcase />} />
             <Route path="/upload" element={<UploadPage />} />
+            <Route path="/app" element={<AppPage />} />
             {/* Add more routes as needed */}
           </Routes>
         </main>
