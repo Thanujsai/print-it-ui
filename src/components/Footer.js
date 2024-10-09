@@ -28,7 +28,7 @@ const FooterSection = styled.footer`
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(238, 229, 211, 0.7); /* Semi-transparent background color */
+  background-color: rgba(255, 255, 255, 0.9) /* Semi-transparent background color */
   padding: 20px;
   padding-bottom:20px;
   display: flex;

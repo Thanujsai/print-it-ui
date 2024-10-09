@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
+import '../css/TestPage.css';
 
 export const TestPage = () => {
 
@@ -19,7 +20,9 @@ export const TestPage = () => {
       <FlipLink>Visions to</FlipLink>
       <FlipLink>Reality</FlipLink>
     </section>
-    <Button onClick={home}>Back</Button>
+    <div className="button">
+        <Button className='back' onClick={home}>Back</Button>
+    </div>
     </>
   );
 };
