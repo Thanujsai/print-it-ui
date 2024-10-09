@@ -14,10 +14,10 @@ export const TestPage = () => {
     <>
     <Header />
     <section className="grid place-content-center gap-2 bg-green-300 px-8 py-24 text-black">
-      <FlipLink href="#">Bring</FlipLink>
-      <FlipLink href="#">your</FlipLink>
-      <FlipLink href="#">Visions to</FlipLink>
-      <FlipLink href="#">Reality</FlipLink>
+      <FlipLink>Bring</FlipLink>
+      <FlipLink>your</FlipLink>
+      <FlipLink>Visions to</FlipLink>
+      <FlipLink>Reality</FlipLink>
     </section>
     <Button onClick={home}>Back</Button>
     </>
@@ -27,13 +27,12 @@ export const TestPage = () => {
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-const FlipLink = ({ children, href }) => {
+const FlipLink = ({ children }) => {
   return (
     <>
     <motion.a
       initial="initial"
       whileHover="hovered"
-      href={href}
       className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
       style={{
         lineHeight: 0.75,
