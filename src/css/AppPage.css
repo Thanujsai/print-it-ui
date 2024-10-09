@@ -1,0 +1,34 @@
+/* Parent container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Individual character styling with animation */
+.char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);  /* Start position (downwards) */
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* The keyframes for the animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);  /* Moves the text to its final position */
+    }
+}
+
+/* Space between the welcome text and the button */
+.welcome {
+    margin-bottom: 20px;
+}
+
+/* You can style the back button as needed */
+.back {
+    cursor: pointer;
+}

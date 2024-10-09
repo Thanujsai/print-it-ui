@@ -51,6 +51,7 @@ const Header = () => {
       <RightMenu>
         <StyledLink to="/models">MODELS</StyledLink>
         <StyledLink to="/app">APP</StyledLink>
+        <StyledLink to="/test">TEST</StyledLink>
       </RightMenu>
     </Nav>
   );
@@ -80,10 +81,26 @@ const LeftMenu = styled.div`
 `;
 
 const RightMenu = styled.div`
-  padding-left: 1600px;
   display: flex;
   margin-right: 20px; /* Add margin to keep it away from the edge */
+  
+  @media (min-width: 1600px) {
+    padding-left: 1600px;
+  }
+
+  @media (max-width: 1599px) and (min-width: 1200px) {
+    padding-left: 1000px; /* Adjust padding for medium-large screens */
+  }
+
+  @media (max-width: 1199px) and (min-width: 768px) {
+    padding-left: 500px; /* Adjust padding for tablets or small desktops */
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 50px; /* Adjust padding for mobile screens */
+  }
 `;
+
 
 const StyledLink = styled(Link)`
   margin: 0 10px;
