@@ -51,6 +51,7 @@ const Header = () => {
       <RightMenu>
         <StyledLink to="/models">MODELS</StyledLink>
         <StyledLink to="/app">APP</StyledLink>
+        <StyledLink to="/test">TEST</StyledLink>
       </RightMenu>
     </Nav>
   );
