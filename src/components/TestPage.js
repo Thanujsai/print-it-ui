@@ -17,7 +17,8 @@ export const TestPage = () => {
     <section className="grid place-content-center gap-2 bg-green-300 px-8 py-24 text-black">
       <FlipLink>Bring</FlipLink>
       <FlipLink>your</FlipLink>
-      <FlipLink>Visions to</FlipLink>
+      <FlipLink>Visions</FlipLink>
+      <FlipLink>To</FlipLink>
       <FlipLink>Reality</FlipLink>
     </section>
     <div className="button">
