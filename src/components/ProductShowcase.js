@@ -68,7 +68,7 @@ const ProductShowcase = () => {
             />
           </div>
         </Carousel>
-        <div className='back' onClick={Back}><Button>Back</Button></div>
+        <div className='back-button' onClick={Back}><Button>Back</Button></div>
       </div>
     </>
   );

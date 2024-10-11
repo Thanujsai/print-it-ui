@@ -8,6 +8,7 @@ import UploadPage from './components/UploadPage';
 import Header from './components/Header';
 import AppPage from './components/AppPage';
 import {TestPage} from './components/TestPage';
+import TestPage2 from './components/TestPage2';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/app" element={<AppPage />} />
             <Route path="/test" element={<TestPage />} />
+            <Route path="/test2" element={<TestPage2 />} />
+            {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>
         </main>
