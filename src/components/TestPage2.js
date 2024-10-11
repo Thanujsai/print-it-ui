@@ -4,15 +4,17 @@ import '../css/Testpage2.css';
 import { initialTabs as tabs } from "./Ingredients";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function TestPage2() {
     const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
     const navigate = useNavigate();
+
     const Back = () => {
         navigate("/");
     }
+
     return (
         <>
         <Header />
@@ -28,7 +30,7 @@ function TestPage2() {
                         >
                             {`${item.icon} ${item.label}`}
                             {item === selectedTab ? (
-                                <motion.div className="testpage2-underline" layoutId="underline" />
+                                <motion.div className="testpage2-underline" layoutId="testpage2-underline" />
                             ) : null}
                         </li>
                     ))}
@@ -44,7 +46,7 @@ function TestPage2() {
                         transition={{ duration: 0.2 }}
                         className="testpage2-content"
                     >
-                        {selectedTab ? selectedTab.icon : "😋"}
+                        <Link to="/">{selectedTab ? selectedTab.icon : "😋"}</Link>
                     </motion.div>
                 </AnimatePresence>
             </main>
