@@ -29,7 +29,7 @@ function AppPage() {
                     </span>
                 ))}
             </h1>
-            <div className='back' onClick={Back}>
+            <div className='back-button' onClick={Back}>
                 <Button>Back</Button>
             </div>
         </div>

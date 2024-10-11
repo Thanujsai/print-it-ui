@@ -20,7 +20,7 @@
     object-fit: cover; /* Ensures the image scales properly without distortion */
   }
   
-  .back {
+  .back-button {
     margin-top: 20px; /* Adds space between carousel and button */
     z-index: 10; /* Keeps it above other content */
   }

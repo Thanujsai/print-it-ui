@@ -22,7 +22,7 @@ export const TestPage = () => {
       <FlipLink>Reality</FlipLink>
     </section>
     <div className="button">
-        <Button className='back' onClick={home}>Back</Button>
+        <Button className='back-button' onClick={home}>Back</Button>
     </div>
     </>
   );
