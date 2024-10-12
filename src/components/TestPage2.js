@@ -18,6 +18,7 @@ function TestPage2() {
     return (
         <>
         <Header />
+        <h1 className='question'>Ready to bring your ideas to life? Choose what you'd like to print from the options below, or upload your own 3D model by going back to the home page!</h1>
         <div className="outer">
         <div className="testpage2-window">
             <nav className="testpage2-nav">
