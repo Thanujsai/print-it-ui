@@ -9,6 +9,7 @@ import Header from './components/Header';
 import AppPage from './components/AppPage';
 import {TestPage} from './components/TestPage';
 import TestPage2 from './components/TestPage2';
+import TestPage3 from './components/TestPage3';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/app" element={<AppPage />} />
             <Route path="/test" element={<TestPage />} />
             <Route path="/test2" element={<TestPage2 />} />
+            <Route path="/test3" element={<TestPage3 />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>
