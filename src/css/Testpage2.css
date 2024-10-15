@@ -6,6 +6,7 @@
     align-items: center;
     height: calc(100vh);
     margin: 0;
+    padding-top: 200px;
 }
 
 .testpage2-window {
@@ -81,12 +82,13 @@
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 32px;
+    font-size: 2.3rem; /* Smaller font size for consistent 4-line wrap */
     color: #e77575;
-    font-family: 'Fredoka One', cursive; /* Funky Font */
+    font-family: 'Fredoka One', cursive;
     -webkit-background-clip: text;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    max-width: 90%;
+    max-width: 50%; /* Adjusted max-width to help control wrapping */
+    line-height: 1.4; /* Adjusted for better readability */
 }
 
 

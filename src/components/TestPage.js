@@ -39,7 +39,7 @@ const FlipLink = ({ children }) => {
       whileHover="hovered"
       className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
       style={{
-        lineHeight: 0.75,
+        lineHeight: 0.82,//if the hidden word is also visible just increase this line height
       }}
     >
       <div>
