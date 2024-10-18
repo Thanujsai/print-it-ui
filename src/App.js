@@ -9,6 +9,7 @@ import Header from './components/Header';
 import AppPage from './components/AppPage';
 import {TestPage} from './components/TestPage';
 import TestPage2 from './components/TestPage2';
+import { NavTest3 } from './components/NavTest3';
 import TestPage3 from './components/TestPage3';
 
 function App() {
