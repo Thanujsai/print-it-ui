@@ -14,7 +14,7 @@ export const TestPage = () => {
   return (
     <>
     <Header />
-    <section className="grid place-content-center gap-2 bg-green-300 px-8 py-24 text-black">
+    <section className="grid place-content-center gap-2 px-8 py-24 text-black">
       <FlipLink>Bring</FlipLink>
       <FlipLink>your</FlipLink>
       <FlipLink>Visions</FlipLink>

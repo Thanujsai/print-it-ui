@@ -1,20 +1,13 @@
-html{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.test3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 450px;
-    margin: 0;
-}
-
-.back-test3 {
+.button-back-testpage3 {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 4px;
+}
+
+.hoverDevCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 250px;
 }
