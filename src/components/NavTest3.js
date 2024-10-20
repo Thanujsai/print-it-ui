@@ -11,7 +11,7 @@ import { Button } from 'antd';
 
 export const NavTest3 = () => {
   return (
-    <div className="flex h-96 w-full justify-start p-8 text-neutral-200 md:justify-center">
+    <div className="flex w-full justify-start p-8 text-neutral-200 md:justify-center">
       <Tabs />
     </div>
   );

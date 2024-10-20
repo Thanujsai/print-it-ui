@@ -9,22 +9,33 @@ import HoverDevCards from './Cards';
 import { RevealBento } from './Grid'
 
 function About() {
-
   const navigate = useNavigate();
+
   const Back = () => {
     navigate("/");
-}
+  };
+
+  const handleHover = () => {
+    document.querySelector('.navtest3').style.zIndex = '100';
+  };
+
+  const handleHoverLeave = () => {
+    document.querySelector('.navtest3').style.zIndex = '10';
+  };
+
   return (
     <>
+      <div className="navtest3" onMouseEnter={handleHover} onMouseLeave={handleHoverLeave}>
         <NavTest3 />
-        <RevealBento />
-        <div className="button-back-testpage3">
-        <Button className='back-button-testpage3' onClick={Back}>Back</Button>
-        </div>
-        <div className='hoverDevCards'><HoverDevCards /></div>
-        
+      </div>
+      <RevealBento />
+      <div className="button-back-testpage3">
+        <Button className="back-button-testpage3" onClick={Back}>Back</Button>
+      </div>
+      <div className="hoverDevCards"><HoverDevCards /></div>
     </>
-  )
+  );
 }
+
 
 export default About;
