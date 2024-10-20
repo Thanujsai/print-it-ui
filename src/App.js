@@ -9,6 +9,9 @@ import Header from './components/Header';
 import AppPage from './components/AppPage';
 import {TestPage} from './components/TestPage';
 import TestPage2 from './components/TestPage2';
+import { TextParallaxContentExample } from './components/TextParallaxContentExample';
+import { NavTest3 } from './components/NavTest3';
+import About from './components/About';
 import TestPage3 from './components/TestPage3';
 
 function App() {
@@ -24,6 +27,7 @@ function App() {
             <Route path="/test" element={<TestPage />} />
             <Route path="/test2" element={<TestPage2 />} />
             <Route path="/test3" element={<TestPage3 />} />
+            <Route path="/about" element={<About />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>

@@ -37,10 +37,10 @@ const Home = () => {
               ))}
             </h1>
             {/* Paragraph with delayed appearance */}
-            <p className="description delayed-paragraph" style={{ textAlign: 'left', textTransform: 'none' }}>
+            {/* <p className="description delayed-paragraph" style={{ textAlign: 'left', textTransform: 'none' }}>
               We’re two brothers who turned our love for 3D printing into a passion project. Now, you can upload your designs, 
               choose your materials, and we’ll handle the rest. Whether it's a one-off design or something for fun, we’ve got your back.
-            </p>
+            </p> */}
             {/* Upload button with further delayed appearance */}
             <div className="upload delayed-upload">
               <Button onClick={Upload}>Upload Your Model</Button>
