@@ -13,6 +13,7 @@ import { TextParallaxContentExample } from './components/TextParallaxContentExam
 import { NavTest3 } from './components/NavTest3';
 import About from './components/About';
 import TestPage3 from './components/TestPage3';
+import { HoverImageLinks } from './components/HoverImage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/test2" element={<TestPage2 />} />
             <Route path="/test3" element={<TestPage3 />} />
             <Route path="/about" element={<About />} />
+            <Route path="/hover" element={<HoverImageLinks />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>
