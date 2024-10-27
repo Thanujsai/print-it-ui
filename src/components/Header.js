@@ -55,6 +55,7 @@ const Header = () => {
         <StyledLink to="/test2">TEST2</StyledLink>
         <StyledLink to="/test3">TEST3</StyledLink>
         <StyledLink to="/about">ABOUT</StyledLink>
+        <StyledLink to="/stream">WATCH LIVE</StyledLink>
       </RightMenu>
     </Nav>
   );
@@ -88,7 +89,7 @@ const RightMenu = styled.div`
   margin-right: 20px; /* Add margin to keep it away from the edge */
   
   @media (min-width: 1600px) {
-    padding-left: 1350px;
+    padding-left: 1300px;
   }
 
   @media (max-width: 1599px) and (min-width: 1200px) {
