@@ -92,7 +92,7 @@ const RightMenu = styled.div`
   }
 
   @media (max-width: 1599px) and (min-width: 1200px) {
-    padding-left: 1000px; /* Adjust padding for medium-large screens */
+    padding-left: 970px; /* Adjust padding for medium-large screens */
   }
 
   @media (max-width: 1199px) and (min-width: 768px) {
