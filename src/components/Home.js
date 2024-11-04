@@ -4,6 +4,7 @@ import { Button } from 'antd';
 import '../css/Fonts.css';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
+import Example from '../components/BubbleText';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -29,7 +30,8 @@ const Home = () => {
         <div className="overlay">
           <div className="hero-text">
             {/* Animated heading */}
-            <h1>
+            {/* <Example /> */}
+            <h1>            
               {splitText.map((char, index) => (
                 <span key={index} className="char" style={{ animationDelay: `${index * 0.1}s` }}>
                   {char === " " ? "\u00A0" : char} {/* Handle space character , it replaces the space with a non-breaking space (\u00A0)*/}
