@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
-import {
-  Call,
-  CallControls,
-  StreamCall,
-  StreamTheme,
-  StreamVideo,
-  SpeakerLayout,
-  StreamVideoClient
-} from "@stream-io/video-react-sdk";
+import { StreamCall, StreamTheme, StreamVideo, SpeakerLayout, StreamVideoClient } from "@stream-io/video-react-sdk";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
-// import '.../css/Streaming.css';
+import Header from '../Header';
+import '../../css/StreamVideo.css'
 
 const callId = "csb-" + Math.random().toString(16).substring(2);
 const user_id = "csb-user";
@@ -43,7 +36,7 @@ export default function StreamingVideo() {
   useEffect(() => {
     if (!client) return;
     const myCall = client.call("default", callId);
-    myCall.join({ create: true }).catch((err) => {
+    myCall.join({ create: true, audio: false }).catch((err) => {
       console.error(`Failed to join the call`, err);
     });
 
@@ -60,13 +53,15 @@ export default function StreamingVideo() {
   if (!client || !call) return null;
 
   return (
-    <StreamVideo client={client}>
-      <StreamTheme className="my-theme-overrides">
-        <StreamCall call={call}>
-          <SpeakerLayout />
-          <CallControls />
-        </StreamCall>
-      </StreamTheme>
-    </StreamVideo>
+    <div className="full-screen-video">
+      <Header />
+      <StreamVideo client={client} className="stream">
+        <StreamTheme className="my-theme-overrides">
+          <StreamCall call={call}>
+            <SpeakerLayout />
+          </StreamCall>
+        </StreamTheme>
+      </StreamVideo>
+    </div>
   );
 }

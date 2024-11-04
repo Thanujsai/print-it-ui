@@ -1,0 +1,7 @@
+.full-screen-video {
+        display: flex; /* This enables flexbox layout */
+        flex-direction: column; /* Aligns children in a column */
+        justify-content: center; /* Horizontally centers the carousel */
+        align-items: center; /* Vertically centers the carousel */
+        height: 100vh; /* Takes up the full viewport height */
+}
