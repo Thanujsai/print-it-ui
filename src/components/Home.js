@@ -4,7 +4,8 @@ import { Button } from 'antd';
 import '../css/Fonts.css';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
-import Example from '../components/BubbleText';
+import { TestPage } from './TestPage';
+import { useTypewriter, Cursor, typeSpeed, deleteSpeed } from 'react-simple-typewriter';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -19,6 +20,12 @@ const Home = () => {
   const splitText = welcomeText.split("");
 
   console.log(splitText)
+
+  const [text] = useTypewriter({
+    words : ['Turn Your 3D Designs into Reality'],
+    typeSpeed:120,
+  });
+
   return (
     <>
       <video className="background-video" autoPlay muted loop>
@@ -31,12 +38,13 @@ const Home = () => {
           <div className="hero-text">
             {/* Animated heading */}
             {/* <Example /> */}
-            <h1>            
-              {splitText.map((char, index) => (
-                <span key={index} className="char" style={{ animationDelay: `${index * 0.1}s` }}>
-                  {char === " " ? "\u00A0" : char} {/* Handle space character , it replaces the space with a non-breaking space (\u00A0)*/}
-                </span>
-              ))}
+            <h1 style = {{margin:'50px'}}>
+              <span style={{fontWeight: 'bold'}}>          
+            {text}
+            </span>
+            <span style={{color:'red'}}>
+            <Cursor cursorStyle='|'/>
+            </span>
             </h1>
             {/* Paragraph with delayed appearance */}
             {/* <p className="description delayed-paragraph" style={{ textAlign: 'left', textTransform: 'none' }}>
