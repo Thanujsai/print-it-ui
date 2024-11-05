@@ -1,7 +1,26 @@
-.full-screen-video {
-        display: flex; /* This enables flexbox layout */
-        flex-direction: column; /* Aligns children in a column */
-        justify-content: center; /* Horizontally centers the carousel */
-        align-items: center; /* Vertically centers the carousel */
-        height: 100vh; /* Takes up the full viewport height */
+/* StreamVideo.css */
+
+.streaming-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: -1; /* Keeps the video background behind other elements */
+}
+
+.stream-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire container */
+}
+
+.my-theme-overrides {
+    width: 100%;
+    height: 100%;
 }
