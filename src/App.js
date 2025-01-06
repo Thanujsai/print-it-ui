@@ -15,6 +15,7 @@ import About from './components/About';
 import TestPage3 from './components/TestPage3';
 import { HoverImageLinks } from './components/HoverImage';
 import StreamingVideo from './components/Streaming/StreamVideo';
+import { Hello } from './components/testcopilot'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/hover" element={<HoverImageLinks />} />
             <Route path="/stream" element={<StreamingVideo />} />
+            <Route path="/hello" element={<Hello />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>
