@@ -31,6 +31,7 @@ export default function StreamingVideo() {
     const [call, setCall] = useState();
     const videoRef = useRef(null); // Ref for the webcam video
 
+    //use effect
     useEffect(() => {
         // Access the webcam stream
         const getWebcamStream = async () => {
