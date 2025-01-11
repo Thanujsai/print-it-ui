@@ -23,14 +23,25 @@ const Home = () => {
     <>
       {/* Replace background video with StreamingVideo */}
       <div className="background-video">
-        <StreamingVideo />
+        {/* <StreamingVideo /> */}
+        <video
+          src="/src-videos/background3.mp4" // Path to your video in the public folder
+          // src={backgroundVideo} // Use this if you imported the video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="video-element"
+        >
+          Your browser does not support the video tag.
+        </video>
       </div>
       <Header />
       <section className="hero-section">
         <div className="overlay">
           <div className="hero-text">
             <h1 style={{ margin: '50px' }}>
-              <span style={{ fontWeight: 'bold' }}>{text}</span>
+              <span style={{ fontWeight: 'bold', color: 'black' }}>{text}</span>
               <span style={{ color: 'red' }}>
                 <Cursor cursorStyle='|' />
               </span>
