@@ -16,6 +16,7 @@ import TestPage3 from './components/TestPage3';
 import { HoverImageLinks } from './components/HoverImage';
 import StreamingVideo from './components/Streaming/StreamVideo';
 import { Cameras } from './components/Streaming/Camera';
+import { AuroraHero } from './components/Models';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/models" element={<ProductShowcase />} />
+            <Route path="/models" element={<AuroraHero />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/app" element={<AppPage />} />
             <Route path="/test" element={<TestPage />} />
