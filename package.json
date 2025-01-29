@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@react-three/drei": "^9.120.6",
+    "@react-three/drei": "^9.121.4",
     "@react-three/fiber": "^8.17.12",
     "@stream-io/video-react-sdk": "^1.7.2",
     "@studio-freight/lenis": "^1.0.42",

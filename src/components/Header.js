@@ -89,7 +89,7 @@ const RightMenu = styled.div`
   margin-right: 20px; /* Add margin to keep it away from the edge */
   
   @media (min-width: 1600px) {
-    padding-left: 1300px;
+    padding-left: 1200px;
   }
 
   @media (max-width: 1599px) and (min-width: 1200px) {
