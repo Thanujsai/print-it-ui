@@ -31,15 +31,14 @@ export default function StreamingVideo() {
     const [call, setCall] = useState();
     const videoRef = useRef(null); // Ref for the webcam video
 
-    //use effect
     useEffect(() => {
-        // Access the webcam stream
         const getWebcamStream = async () => {
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({
                     video: true,
-                    audio: false // Mute audio if needed
+                    audio: false // Mute audio
                 });
+                
                 if (videoRef.current) {
                     videoRef.current.srcObject = stream;
                 }
@@ -51,8 +50,9 @@ export default function StreamingVideo() {
         getWebcamStream();
 
         return () => {
-            if (videoRef.current) {
-                const tracks = videoRef.current.srcObject.getTracks();
+            const videoElement = videoRef.current; // Copy ref to variable
+            if (videoElement && videoElement.srcObject) {
+                const tracks = videoElement.srcObject.getTracks();
                 tracks.forEach(track => track.stop()); // Stop the video tracks when unmounting
             }
         };
@@ -102,13 +102,6 @@ export default function StreamingVideo() {
                     zIndex: -1, // Set behind other content
                 }}
             />
-            {/* <StreamVideo client={client} className="stream-video" style={{ position: 'relative', zIndex: 1 }}>
-                <StreamTheme className="my-theme-overrides">
-                    <StreamCall call={call}>
-                        <SpeakerLayout />
-                    </StreamCall>
-                </StreamTheme>
-            </StreamVideo> */}
         </div>
     );
 }
