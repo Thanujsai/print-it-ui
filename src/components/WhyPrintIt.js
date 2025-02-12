@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
-import '../css/TestPage.css';
+import '../css/WhyPrintIt.css';
+import AnimatedStats from "./AnimatedStats";
 
-export const TestPage = () => {
+export const WhyPrintIt = () => {
 
     const navigate = useNavigate();
     const home = () => {
@@ -15,7 +16,7 @@ export const TestPage = () => {
     <>
     <Header />
     <section className="grid place-content-center gap-2 px-8 py-24 text-black">
-      <FlipLink>Bring</FlipLink>
+      <FlipLink >Bring</FlipLink>
       <FlipLink>your</FlipLink>
       <FlipLink>Visions</FlipLink>
       <FlipLink>To</FlipLink>
@@ -24,6 +25,7 @@ export const TestPage = () => {
     <div className="button">
         <Button className='back-button' onClick={home}>Back</Button>
     </div>
+    <AnimatedStats />
     </>
   );
 };
