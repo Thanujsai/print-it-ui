@@ -2,7 +2,7 @@ import React from 'react'
 import { TextParallaxContentExample } from './TextParallaxContentExample'
 import Header from './Header'
 
-function TestPage3() {
+function ShowCase() {
   return (
     <>
     <Header />
@@ -11,4 +11,4 @@ function TestPage3() {
   )
 }
 
-export default TestPage3
+export default ShowCase

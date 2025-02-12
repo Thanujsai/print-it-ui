@@ -49,11 +49,11 @@ const Header = () => {
         <StyledLink to="/" style={{fontFamily: 'Dancing Script, cursive'}}>PRINTIT</StyledLink> 
       </LeftMenu>
       <RightMenu>
-        <StyledLink to="/models">MODELS</StyledLink>
-        <StyledLink to="/app">APP</StyledLink>
-        <StyledLink to="/test">TEST1</StyledLink>
+        <StyledLink to="/explore">EXPLORE</StyledLink>
+        <StyledLink to="/howItWorks">HOW IT WORKS</StyledLink>
+        <StyledLink to="/why">WhyPrintIt</StyledLink>
         <StyledLink to="/test2">TEST2</StyledLink>
-        <StyledLink to="/test3">TEST3</StyledLink>
+        <StyledLink to="/showcase">SHOWCASE</StyledLink>
         <StyledLink to="/about">ABOUT</StyledLink>
         <StyledLink to="/stream">WATCH LIVE</StyledLink>
       </RightMenu>
