@@ -64,7 +64,7 @@ const HowItWorks = () => {
         className="get-started-container text-center py-16 text-white"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 3 }}
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
           Ready to Bring Your Ideas to Life?

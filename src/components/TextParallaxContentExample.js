@@ -6,24 +6,26 @@ import { useNavigate } from "react-router-dom";
 import { Button, ConfigProvider, Space } from 'antd';
 
 export const TextParallaxContentExample = () => {
+
+  const image = '/src-images/backgroundForHowItWorks.jpg';
   return (
     <div className="bg-white">
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgUrl="https://phrozen3d.com/cdn/shop/articles/Things_to_3D_print_and_sell_1200x500_8178b8dd-2751-4003-8d53-7ed5ead289fb.jpg?v=1730103326&width=1000"
         subheading="High Precision"
         heading="Print Your Dreams"
       >
         <ExampleContentUpload />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgUrl="https://cdn.artec3d.com/styles/1468_webp/s3/content-hub-images/how-does-a-3d-printer-work-01.jpg.webp?VersionId=67bC2c5MDtyD44RSL2k7flNZGNVfIbp1&itok=0Be5GjjJ"
         subheading="Customizable"
         heading="Bring Ideas to Life"
       >
         <ExampleContentShowcase />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://images.unsplash.com/photo-1504610926078-a1611febcad3?q=80&w=2416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        imgUrl="https://images.pexels.com/photos/9242927/pexels-photo-9242927.jpeg?auto=compress&cs=tinysrgb&w=600"
         subheading="Strong & Durable"
         heading="Top-Quality Prints"
       >
