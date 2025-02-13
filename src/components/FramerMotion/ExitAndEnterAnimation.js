@@ -20,9 +20,9 @@ function ExitAndEnterAnimation() {
             <motion.div 
                 initial={{opacity: 0, y:0}}
                 animate={{opacity: 1, y:40}}
-                transition={{duration: 5}}
+                transition={{duration: 10}}
                 className="bg-green-300 h-24 w-24 rounded-full"
-                exit={{opacity: 0, y: 1000}}>
+                exit={{opacity: 0, y: 1000, transition: {duration: 20}}}>
             </motion.div>
             )}
         </AnimatePresence>
