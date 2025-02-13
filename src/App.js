@@ -22,6 +22,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import { useEffect } from 'react';
 import ProgressBar from './components/FramerMotion/ProgressBar';
+import ExitAndEnterAnimation from './components/FramerMotion/ExitAndEnterAnimation';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
             <Route path="/camera" element={<Cameras />} />
             <Route path="/testcamera" element={<WebSocketPlayer />} />
             <Route path="/framer" element={<ProgressBar />} />
+            <Route path="/exit" element={<ExitAndEnterAnimation />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>
