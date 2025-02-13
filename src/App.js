@@ -21,6 +21,7 @@ import WebSocketPlayer from './components/Streaming/Stream';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import { useEffect } from 'react';
+import ProgressBar from './components/FramerMotion/ProgressBar';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
             <Route path="/stream" element={<StreamingVideo />} />
             <Route path="/camera" element={<Cameras />} />
             <Route path="/testcamera" element={<WebSocketPlayer />} />
+            <Route path="/framer" element={<ProgressBar />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>
