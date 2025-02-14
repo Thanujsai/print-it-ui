@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import GestureButton from './GestureButton';
 
 function ExitAndEnterAnimation() {
     const [removeInnerCircle, setRemoveInnerCircle] = useState(false);
@@ -31,6 +32,9 @@ function ExitAndEnterAnimation() {
             </motion.div>
             )}
         </AnimatePresence>
+        </div>
+        <div>
+            <GestureButton />
         </div>
         </div>
     )
