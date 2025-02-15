@@ -20,15 +20,20 @@ const Variant1 = {
 };
 
 const Variant2 ={
-  "show": {
+  "show": i => ({//dynamic variant
     opacity: 1,
     x: 0,
-  },
+    transition : {
+      delay: i
+    }
+  }),
   "hide": {
     opacity: 0,
     x: -100,
   }
 }
+
+const emojis = ["❤️","💬","😀","👍","🚀"]
 //variants will be able to propagate the set of animations through dom
 function Variants() {
   const [showEmojis, setShowEmojis] = useState(false);
@@ -41,11 +46,17 @@ function Variants() {
       variants={Variant1}
       className="flex rounded-full p-4 items-center text-2xl justify-evenly w-64 h-12 bg-white">{/*whenever you want to show emojis use show variant other hide variant */}
         {/*some emojis*/}
-        <motion.span variants={Variant2} className="bg-transparent">❤️</motion.span>
-        <motion.span variants={Variant2} className="bg-transparent">💬</motion.span>
-        <motion.span variants={Variant2} className="bg-transparent">😀</motion.span>
-        <motion.span variants={Variant2} className="bg-transparent">👍</motion.span>
-        <motion.span variants={Variant2} className="bg-transparent">🚀</motion.span>
+        {
+          emojis.map((emoji, index) => {
+        return <motion.span 
+                key={index}
+                variants={Variant2} 
+                custom={index}//the index of the array will be passed to the variants
+                className="bg-transparent">
+                  {emoji}
+                </motion.span>
+          }
+        )}
       </motion.div>
       <button className='bg-sky-500 text-white cursor-pointer font-semibold p-4 px-8 py-2 rounded-md' onClick={() => setShowEmojis(!showEmojis)}>
         
