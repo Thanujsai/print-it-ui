@@ -25,7 +25,7 @@ import ProgressBar from './components/FramerMotion/ProgressBar';
 import ExitAndEnterAnimation from './components/FramerMotion/ExitAndEnterAnimation';
 import DraggableDiv from './components/FramerMotion/DraggableDiv';
 import Variants from './components/FramerMotion/Variants.js';
-import Home2 from './components/Home2.js';
+import MainPage from './components/MainPage.js';
 
 function App() {
 
@@ -38,7 +38,7 @@ function App() {
       <div className="app">
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home2 />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/explore" element={<AuroraHero />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/howItWorks" element={<HowItWorks />} />
@@ -58,7 +58,7 @@ function App() {
             {/* Add more routes as needed */}
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
