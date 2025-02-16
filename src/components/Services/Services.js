@@ -66,7 +66,7 @@ function Services() {
             damping:10,
             delay:0.2
         }}
-        className='text-3xl font-bold text-lightGray'>Popular <span className='text-primary'>3D Printed </span>Items</motion.h1>
+        className='text-3xl font-bold text-lightGray'>Popular <span className='text-primary'>3D Printed </span>Categories</motion.h1>
         <motion.p 
         initial={{opacity:0, scale: 0.5 }}
         whileInView={{opacity:1, scale:1}}
