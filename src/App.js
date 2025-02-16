@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
+import Home from './components/Home2.js';
 import ProductShowcase from './components/ProductShowcase';
 import Footer from './components/Footer';
 import './css/BackgroundVideoStyles.css'; // Import your CSS file
@@ -21,7 +21,11 @@ import WebSocketPlayer from './components/Streaming/Stream';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import { useEffect } from 'react';
-
+import ProgressBar from './components/FramerMotion/ProgressBar';
+import ExitAndEnterAnimation from './components/FramerMotion/ExitAndEnterAnimation';
+import DraggableDiv from './components/FramerMotion/DraggableDiv';
+import Variants from './components/FramerMotion/Variants.js';
+import MainPage from './components/MainPage.js';
 
 function App() {
 
@@ -34,7 +38,7 @@ function App() {
       <div className="app">
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/explore" element={<AuroraHero />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/howItWorks" element={<HowItWorks />} />
@@ -46,11 +50,15 @@ function App() {
             <Route path="/stream" element={<StreamingVideo />} />
             <Route path="/camera" element={<Cameras />} />
             <Route path="/testcamera" element={<WebSocketPlayer />} />
+            <Route path="/framer" element={<ProgressBar />} />
+            <Route path="/exit" element={<ExitAndEnterAnimation />} />
+            <Route path="/draggable" element={<DraggableDiv />} />
+            <Route path="/variants" element={<Variants />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
