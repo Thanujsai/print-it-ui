@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../css/ProductShowcase.css';
+import '../../css/ProductShowcase.css';
 import { Button } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
 import { Carousel } from 'antd';

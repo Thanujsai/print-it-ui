@@ -7,7 +7,7 @@ import {
     StreamVideoClient
 } from "@stream-io/video-react-sdk";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
-import Header from '../Header';
+import Header from '../v0.0/Header';
 import '../../css/StreamVideo.css';
 
 const callId = "csb-" + Math.random().toString(16).substring(2);

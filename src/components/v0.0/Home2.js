@@ -1,11 +1,11 @@
 import React from 'react';
-import '../css/Home.css';
+import '../../css/Home.css';
 import { Button } from 'antd';
-import '../css/Fonts.css';
+import '../../css/Fonts.css';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
-import StreamingVideo from './Streaming/StreamVideo';
+import StreamingVideo from '../Streaming/StreamVideo';
 
 const Home2 = () => {
   const navigate = useNavigate();

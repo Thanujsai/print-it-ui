@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import '../css/HowItWorks.css';
+import '../../css/HowItWorks.css';
 import Header from './Header';
 import { useNavigate } from 'react-router-dom';
 

@@ -4,7 +4,7 @@ import ProductShowcase from './ProductShowcase';
 import Header from './Header';
 import { Button } from 'antd';
 import { useNavigate, Link } from 'react-router-dom';
-import '../css/About.css';
+import '../../css/About.css';
 import HoverDevCards from './Cards';
 import { RevealBento } from './Grid'
 

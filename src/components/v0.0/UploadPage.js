@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import '../css/UploadPage.css';
+import '../../css/UploadPage.css';
 import { useNavigate } from 'react-router-dom';
 
 const UploadPage = () => {

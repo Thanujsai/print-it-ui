@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import Header from './Header';
-import '../css/Testpage2.css';
+import '../../css/Testpage2.css';
 import { initialTabs as tabs } from "./Ingredients";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from 'antd';

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
-import '../css/WhyPrintIt.css';
+import '../../css/WhyPrintIt.css';
 import AnimatedStats from "./AnimatedStats";
 
 export const WhyPrintIt = () => {
