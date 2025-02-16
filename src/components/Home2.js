@@ -26,7 +26,7 @@ function Home2() {
                 <div className='text-lightOrange mt-[100px] md:mt-0 p-4 space-y-28'>
                     <motion.h1 
                     initial={{opacity:0, y:-100 }}
-                    animate={{opacity:1, y: 0}}
+                    whileInView={{opacity:1, y:0}}//if you dont want the animations to come again and again whenever this component comes in view, chagne whileInView to animate
                     transition={{
                         type:"spring",
                         stiffness:100,
@@ -36,7 +36,7 @@ function Home2() {
                      className='text-7xl font-bold leading-tight ml-14'>Your Ideas, Printed</motion.h1>
                     <motion.div
                     initial={{opacity:0, y:100 }}
-                    animate={{opacity:1, y: 0}}
+                    whileInView={{opacity:1, y:0}}
                     transition={{
                         type:"spring",
                         stiffness:100,
@@ -57,7 +57,7 @@ function Home2() {
                 <div className='relative'>
                     <motion.img 
                     initial={{opacity:0, scale:0 }}
-                    animate={{opacity:1, scale: 1}}
+                    animate={{opacity:1, scale:1}}
                     transition={{
                         type:"spring",
                         stiffness:100,
@@ -68,7 +68,7 @@ function Home2() {
                     {/* orange circle ring */}
                     <motion.div
                     initial={{opacity:0, y:100 }}
-                    animate={{opacity:1, y: 0}}
+                    whileInView={{opacity:1, y:0}}
                     transition={{
                         type:"spring",
                         stiffness:100,
@@ -79,7 +79,7 @@ function Home2() {
                     {/* big text section */}
                     <motion.div
                         initial={{opacity:0, x:-100 }}
-                        animate={{opacity:1, x: 0}}
+                        whileInView={{opacity:1, x:0}}
                         transition={{
                             type:"spring",
                             stiffness:100,
@@ -93,7 +93,7 @@ function Home2() {
                 {/* third div section */}
                 <motion.div 
                 initial={{opacity:0, y:100 }}
-                animate={{opacity:1, y: 0}}
+                whileInView={{opacity:1, y:0}}
                 transition={{
                     type:"spring",
                     stiffness:100,
@@ -123,7 +123,7 @@ function Home2() {
                 <div className='w-full h-full flex justify-center items-center'>
                     <div className='flex flex-col justify-center items-center gap-6 text-white'>
                         {/* line */}
-                        <div className='w-[1px] h[-70px] bg-white'></div>
+                        <div className='w-[1px] h-[70px] bg-white'></div>
                         {/* social icons */}
                         <div className='inline-block p-2 rounded-full cursor-pointer border border-white'>
                             <FaFacebookF className='text-2xl'/>
@@ -134,7 +134,7 @@ function Home2() {
                         <div className='inline-block p-2 rounded-full cursor-pointer border border-white'>
                             <FaInstagram className='text-2xl'/>
                         </div>
-                        <div className='w-[1px] h[-70px] bg-white'></div>
+                        <div className='w-[1px] h-[70px] bg-white'></div>
                     </div>
                 </div>
             </motion.div>)}
