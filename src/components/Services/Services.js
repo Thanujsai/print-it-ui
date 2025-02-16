@@ -11,19 +11,19 @@ const servicesData = [
     id: 1,
     image: Name,
     title: "Customized Keychains",
-    subtile: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    subtile: "Personalize your keychain with custom names, initials, or designs to make it truly unique. Perfect as a gift or for everyday use."
   },
   {
     id: 2,
     image: Gaming,
     title: "Gaming Accessories",
-    subtile: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    subtile: "Upgrade your gaming setup with 3D-printed accessories like dice towers, controller stands, and more. Designed for gamers who value both style and functionality."
   },
   {
     id: 3,
     image: HomeDecor,
     title: "Home Decor",
-    subtile: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    subtile: "Enhance your living space with 3D-printed decor, from modern lamps to stylish plant pots. Unique designs that bring creativity to your home."
   }
 ]
 
@@ -76,9 +76,7 @@ function Services() {
             damping:10,
             delay:0.6
         }}
-        className='text-sm opacity-50 '>Duis Lorem eu laborum aliquip quis ullamco duis. Irure culpa non elit eiusmod. Velit pariatur ipsum sit consectetur aliqua qui. 
-          Eu occaecat enim magna cupidatat et id. Enim excepteur elit consectetur quis magna duis eu in labore occaecat consectetur esse aute consequat.
-           Ea reprehenderit dolore esse aliqua.</motion.p>
+        className='text-sm opacity-50 '>Discover a range of high-quality 3D-printed products, crafted with precision to add a personal touch to your daily life.</motion.p>
       </div>
       {/* card section */}
       <motion.div
