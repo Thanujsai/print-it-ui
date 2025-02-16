@@ -26,6 +26,7 @@ import ExitAndEnterAnimation from './components/FramerMotion/ExitAndEnterAnimati
 import DraggableDiv from './components/FramerMotion/DraggableDiv';
 import Variants from './components/FramerMotion/Variants.js';
 import MainPage from './components/MainPage.js';
+import Explore from './components/Explore/Explore.js';
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/explore" element={<AuroraHero />} />
+            <Route path="/explore" element={<Explore />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/howItWorks" element={<HowItWorks />} />
             <Route path="/why" element={<WhyPrintIt />} />
