@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home2.js';
+import Home2 from './components/Home2.js';
 import ProductShowcase from './components/ProductShowcase';
 import Footer from './components/Footer';
 import './css/BackgroundVideoStyles.css'; // Import your CSS file
