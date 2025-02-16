@@ -2,24 +2,27 @@ import React from 'react';
 import { delay, motion } from 'framer-motion';
 import Coffee1 from '../Images/services/coffee1.png';
 import Coffee3 from '../Images/services/coffee3.png';
+import HomeDecor from '../Images/services/home_decor.png';
+import Name from '../Images/services/name.png';
+import Gaming from '../Images/services/gaming.png';
 
 const servicesData = [
   {
     id: 1,
-    image: Coffee1,
-    title: "Black Coffee",
+    image: Name,
+    title: "Customized Keychains",
     subtile: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     id: 2,
-    image: Coffee3,
-    title: "Hot Coffee",
+    image: Gaming,
+    title: "Gaming Accessories",
     subtile: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     id: 3,
-    image: Coffee1,
-    title: "Cold Coffee",
+    image: HomeDecor,
+    title: "Home Decor",
     subtile: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   }
 ]
@@ -63,7 +66,7 @@ function Services() {
             damping:10,
             delay:0.2
         }}
-        className='text-3xl font-bold text-lightGray'>Fresh and <span className='text-primary'>Tasty Coffees</span></motion.h1>
+        className='text-3xl font-bold text-lightGray'>Popular <span className='text-primary'>3D Printed </span>Items</motion.h1>
         <motion.p 
         initial={{opacity:0, scale: 0.5 }}
         whileInView={{opacity:1, scale:1}}
