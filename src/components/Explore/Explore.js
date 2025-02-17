@@ -59,8 +59,15 @@ const Explore = () => {
                 whileHover={{scale:1.1}}
                 className='p-4 border rounded shadow-sm space-y-2 cursor-pointer'>
                   <img src={card.image} alt="" className='h-[240px] w-full object-cover'/>
-                  <p className='text-xl font-medium' style={{ fontFamily: 'Montserrat, sans-serif' }}>{card.title}</p>
-                  <p className='text-gray-500'>{card.category}</p>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className='text-xl font-medium' style={{ fontFamily: 'Montserrat, sans-serif' }}>{card.title}</p>
+                      <p className='text-gray-500'>{card.category}</p>
+                    </div>
+                    <div>
+                      <p className='text-gray-500'>{card.price}</p>
+                    </div>
+                  </div>
               </motion.div>
             ))
           }

@@ -10,7 +10,7 @@ export const MODELS = [
         image: Image1,
         title: "Yoga Mat",
         info: "info",
-        price: "price",
+        price: "$200",
       },
       {
         id: 2,
