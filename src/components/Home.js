@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CoffeeMain from './Images/lamp.png';
 import Navbar from './Navbar/Navbar';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -14,6 +14,11 @@ const bgImage = {
 }
 function Home() {
     const [sidebar, setSidebar] = useState(false);
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top whenever the Home component is mounted
+    }, []);
+
   return (
     <main style={bgImage}>
         <section className='relative'>
