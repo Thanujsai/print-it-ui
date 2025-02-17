@@ -25,7 +25,11 @@ const Explore = () => {
       className='text-3xl pt-16 flex place-items-center justify-center'>Explore</motion.h1>
       <div className="container my-12 md:my-16">
         {/* tabs button section */}
-        <div className='flex space-x-4 mb-4 p-6'>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className='flex space-x-4 mb-4 p-6'>
           {
             tabs.map((tab) => (
               <button key={tab}
@@ -37,10 +41,14 @@ const Explore = () => {
             )
             )
           }
-        </div>
+        </motion.div>
 
         {/* tabs card section */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
           {
             filteredCards.map((card) => (
               <motion.div
@@ -56,7 +64,7 @@ const Explore = () => {
               </motion.div>
             ))
           }
-        </div>
+        </motion.div>
       </div>
     </div>
   )
