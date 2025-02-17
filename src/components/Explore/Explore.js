@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {MODELS} from '../Data/Data';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Explore = () => {
 
@@ -10,6 +11,7 @@ const Explore = () => {
 
   const [activeTab, setActiveTab] = useState("All");
   const tabs = ["All", "Yoga", "Fitness", "Muscles"];
+  const navigate = useNavigate();
 
   const filteredCards = activeTab === "All" ? MODELS : MODELS.filter((model) => model.category === activeTab)
   return (
@@ -72,6 +74,14 @@ const Explore = () => {
             ))
           }
         </motion.div>
+      </div>
+      <div className='flex place-items-center justify-center pb-10'>
+      <button
+               onClick={() => navigate("/")} 
+               className={`py-2 px-4 rounded bg-primary text-white hover:bg-primaryDark`}
+               >
+                Back
+              </button>
       </div>
     </div>
   )
