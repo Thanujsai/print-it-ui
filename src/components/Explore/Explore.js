@@ -12,7 +12,7 @@ const Explore = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const tabs = ["All", "Yoga", "Fitness", "Muscles"];
+  const tabs = ["All", "Miniatures & Figurines", "Home Decor", "Gadgets & Accessories", "Art & Sculptures", "Mechanical Parts", "Toys & Games"];
   const navigate = useNavigate();
 
   const filteredCards = MODELS.filter(
