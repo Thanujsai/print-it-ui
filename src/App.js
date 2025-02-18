@@ -27,6 +27,7 @@ import DraggableDiv from './components/FramerMotion/DraggableDiv';
 import Variants from './components/FramerMotion/Variants.js';
 import MainPage from './components/MainPage.js';
 import Explore from './components/Explore/Explore.js';
+import Details from './components/ProductDetails/Details.js';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
             <Route path="/exit" element={<ExitAndEnterAnimation />} />
             <Route path="/draggable" element={<DraggableDiv />} />
             <Route path="/variants" element={<Variants />} />
+            <Route path="/details" element={<Details />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>

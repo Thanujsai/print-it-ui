@@ -18,7 +18,7 @@ const Explore = () => {
   const filteredCards = MODELS.filter(
     (model) => (activeTab === "All" || model.category === activeTab) &&
       model.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  );//The filteredCards array is recalculated every time searchQuery or activeTab changes:
   
   return (
     <div>
@@ -70,7 +70,7 @@ const Explore = () => {
             type="text"
             placeholder={`Search in ${activeTab}`}
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => setSearchQuery(e.target.value)}//Whenever you type in the input box, setSearchQuery(e.target.value) updates searchQuery with the entered text.
             className="px-4 py-2 border rounded w-full max-w-md"
           />
         </motion.div>
@@ -89,6 +89,7 @@ const Explore = () => {
                 initial={{opacity: 0, x: 10}}
                 whileInView={{opacity: 1, x: 0}}
                 whileHover={{scale:1.1}}
+                onTap={() => navigate("/details", { state: { card } })} // Pass card data
                 className='p-4 border rounded shadow-sm space-y-2 cursor-pointer'>
                   <img src={card.image} alt="" className='h-[240px] w-full object-cover'/>
                   <div className="flex justify-between items-center">
