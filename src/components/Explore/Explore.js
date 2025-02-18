@@ -56,7 +56,16 @@ const Explore = () => {
 
 
         {/* Search bar */}
-        <div className="flex justify-center mb-6">
+        <motion.div
+          initial={{opacity:0, scale:0 }}
+          animate={{opacity:1, scale:1}}
+          transition={{
+              type:"spring",
+              stiffness:100,
+              damping:10,
+              delay:1
+          }}
+          className="flex justify-center mb-6">
           <input
             type="text"
             placeholder={`Search in ${activeTab}`}
@@ -64,7 +73,7 @@ const Explore = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             className="px-4 py-2 border rounded w-full max-w-md"
           />
-        </div>
+        </motion.div>
 
         {/* tabs card section */}
         <motion.div
