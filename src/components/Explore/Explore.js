@@ -10,10 +10,16 @@ const Explore = () => {
   }, []);
 
   const [activeTab, setActiveTab] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
   const tabs = ["All", "Yoga", "Fitness", "Muscles"];
   const navigate = useNavigate();
 
-  const filteredCards = activeTab === "All" ? MODELS : MODELS.filter((model) => model.category === activeTab)
+  const filteredCards = MODELS.filter(
+    (model) => (activeTab === "All" || model.category === activeTab) &&
+      model.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  
   return (
     <div>
       <motion.h1 
@@ -35,7 +41,10 @@ const Explore = () => {
           {
             tabs.map((tab) => (
               <button key={tab}
-               onClick={() => setActiveTab(tab)} 
+               onClick={() => {setActiveTab(tab)
+                setSearchQuery(""); // Reset search when switching tabs
+               }
+               } 
                className={`py-2 px-4 rounded ${activeTab === tab ? "bg-primary text-white":"bg-gray-200 text-gray-700"} hover:bg-gray-400`}
                >
                 {tab}
@@ -44,6 +53,18 @@ const Explore = () => {
             )
           }
         </motion.div>
+
+
+        {/* Search bar */}
+        <div className="flex justify-center mb-6">
+          <input
+            type="text"
+            placeholder={`Search in ${activeTab}`}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="px-4 py-2 border rounded w-full max-w-md"
+          />
+        </div>
 
         {/* tabs card section */}
         <motion.div
