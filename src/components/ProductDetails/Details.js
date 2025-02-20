@@ -1,45 +1,150 @@
-import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Button } from "antd";
-import { MODELS } from "../Data/Data";
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { MODELS } from '../Data/Data';
+import starUnfilled from '../Images/starUnfilled.png';
+import star from '../Images/star.png';
+import Navbar from '../Navbar/Navbar';
+import { Button } from 'antd';
+import ReactImageMagnify from 'react-image-magnify';
+import {motion} from 'framer-motion';
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Details = () => {
   const { id } = useParams();
+  const product = MODELS.find((model) => model.id.toString() === id);
   const navigate = useNavigate();
-  const card = MODELS.find(model => model.id.toString() === id); // Find model by id
 
-  if (!card) {
-    return <p className="text-center text-red-500 mt-10">No details available.</p>;
+  // State to track the selected image
+  const [selectedImage, setSelectedImage] = useState(product?.image);
+
+  if (!product) {
+    return <div className="text-center text-red-500">Product not found</div>;
   }
 
   return (
-    <div>
-      <h1 className="text-3xl flex justify-center mt-6">Details</h1>
-      <div className='grid grid-cols-1 md:grid-cols-2 p-20 lg:grid-cols-3 gap-6 place-items-center'>
+    <div className='py-2'>
+      {/* Navbar */}
+      <nav>
+        <div className='container'>
+                    <div className='flex justify-between items-center'>
+                        {/* logo section */}
+                        <motion.h1
+                        initial={{opacity:0, y:-100 }}
+                        animate={{opacity:1, y: 0}}
+                        transition={{
+                            type:"spring",
+                            stiffness:100,
+                            damping:10,
+                            delay:0.2
+                        }}
+                        onClick={() => navigate("/")}
+                        className='text-2xl font-semibold cursor-pointer'>
+                            <span className='text-primary'>Print</span>
+                         It
+                        </motion.h1>
+                        {/* menu section */}
+                        {/* <motion.div
+                        initial={{opacity:0, y:-100 }}
+                        animate={{opacity:1, y: 0}}
+                        transition={{
+                            type:"spring",
+                            stiffness:100,
+                            damping:10,
+                            delay:0.2
+                        }}
+                        >
+                            <GiHamburgerMenu className='text-3xl cursor-pointer'></GiHamburgerMenu>
+                        </motion.div> */}
+                    </div>
+                </div>
+      </nav>
+
+      {/* Centered Content */}
+      <div 
+      className="flex justify-center items-center gap-6 p-6">
+        {/* Left Side: Stacked Small Images */}
+        <div 
+        className="flex flex-col gap-3">
+          {[product.image, product.image, product.image, product.image].map((img, index) => (
+            <motion.img
+              initial={{opacity:0, scale:0 }}
+              animate={{opacity:1, scale:1}}
+              transition={{
+                  type:"spring",
+                  stiffness:100,
+                  damping:10,
+                  delay:index*0.2
+                }}
+              key={index}
+              src={img}
+              alt={product.title}
+              className="w-24 h-24 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500"
+              onClick={() => setSelectedImage(img)}
+            />
+          ))}
+        </div>
+
+        {/* Right Side: Magnifying Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.4 }}
-          className='p-4 border rounded shadow-sm space-y-2 cursor-pointer'
-        >
-          <img src={card.image} alt={card.title} className='h-[240px] w-full object-cover hover:scale-125 duration-300' />
+          initial={{ opacity: 0, y: 50, scale: 0 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 120,
+            damping: 15,
+            mass: 0.8,
+            delay: 0.8
+          }}
+
+        className="w-[400px] h-[400px]">
+          <ReactImageMagnify
+            {...{
+              smallImage: {
+                alt: product.title,
+                isFluidWidth: false,
+                width: 400, // Main image size
+                height: 400,
+                src: selectedImage,
+              },
+              largeImage: {
+                src: selectedImage,
+                width: 1000, // Zoomed image size
+                height: 1000,
+              },
+              enlargedImageContainerDimensions: {
+                width: 300,  // Medium-sized magnified display
+                height: 300,
+              },
+              lensStyle: {
+                width: 120,  // Medium-sized square zoom lens
+                height: 120,
+                backgroundColor: "rgba(0,0,0,0.2)",  // Semi-transparent effect
+              },
+              shouldUsePositiveSpaceLens: true,
+            }}
+          />
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.6 }}
-          className="space-y-4 text-center md:text-left"
-        >
-          <h2 className="text-2xl font-bold text-primary">{card.title}</h2>
-          <p className="text-lg text-black">{card.info}</p>
-          <p className="text-lg text-black">{card.price}</p>
-        </motion.div>
+
+        {/* Product Details */}
+        <div>
+          <h1 className="text-xl font-bold">{product.title}</h1>
+          <h1 className="text-l">{product.info}</h1>
+          <h1 className="text-l font-bold">{product.price}</h1>
+          <div className="flex items-center mt-2">
+            <img src={star} alt="star" className="w-6 h-6" />
+            <img src={star} alt="star" className="w-6 h-6" />
+            <img src={star} alt="star" className="w-6 h-6" />
+            <img src={star} alt="star" className="w-6 h-6" />
+            <img src={starUnfilled} alt="star" className="w-6 h-6" />
+            <p className="ml-2">(122)</p>
+          </div>
+        </div>
       </div>
-      <div className="flex justify-center">
-        <Button onClick={() => navigate("/explore")} className="hover:scale-110">
-          Back
-        </Button>
+
+      {/* Buttons */}
+      <div className='flex justify-center items-center gap-6 p-6'>
+        <Button type="primary">Add to Cart</Button>
+        <Button type="primary" onClick={() => navigate("/explore")}>Back</Button>
       </div>
     </div>
   );
