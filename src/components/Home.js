@@ -68,7 +68,7 @@ function Home() {
                         type:"spring",
                         stiffness:100,
                         damping:10,
-                        delay:0.4
+                        delay:0.1
                     }}
                     src={lamp} alt="" className='relative z-40 h-[400px] md:h-[700px] img-shadow'></motion.img>
                     {/* orange circle ring */}

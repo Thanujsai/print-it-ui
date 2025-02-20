@@ -56,7 +56,7 @@ function App() {
             <Route path="/exit" element={<ExitAndEnterAnimation />} />
             <Route path="/draggable" element={<DraggableDiv />} />
             <Route path="/variants" element={<Variants />} />
-            <Route path="/details" element={<Details />} />
+            <Route path="/details/:id" element={<Details />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
           </Routes>

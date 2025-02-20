@@ -95,7 +95,7 @@ const Explore = () => {
               initial={{ opacity: 0, x: 10 }}
               whileInView={{ opacity: 1, x: 0 }}
               whileHover={{ scale: 1.1 }}
-              onTap={() => navigate("/details", { state: { card } })}
+              onTap={() => navigate(`/details/${card.id}`)}
               className='p-4 border rounded shadow-sm space-y-2 cursor-pointer'
             >
               <img src={card.image} alt={card.title} className='h-[240px] w-full object-cover' />
