@@ -26,22 +26,22 @@ const Details = () => {
       {/* Navbar */}
       <nav>
         <div className='container'>
-                    <div className='flex justify-between items-center'>
-                        {/* logo section */}
-                        <motion.h1
-                        initial={{opacity:0, y:-100 }}
-                        animate={{opacity:1, y: 0}}
-                        transition={{
-                            type:"spring",
-                            stiffness:100,
-                            damping:10,
-                            delay:0.2
-                        }}
-                        onClick={() => navigate("/")}
-                        className='text-2xl font-semibold cursor-pointer'>
-                            <span className='text-primary'>Print</span>
-                         It
-                        </motion.h1>
+          <div className='flex justify-between items-center'>
+              {/* logo section */}
+               <motion.h1
+                  initial={{opacity:0, y:-100 }}
+                  animate={{opacity:1, y: 0}}
+                  transition={{
+                    type:"spring",
+                    stiffness:100,
+                    damping:10,
+                    delay:0.2
+                  }}
+                  onClick={() => navigate("/")}
+                  className='text-2xl font-semibold cursor-pointer'>
+                  <span className='text-primary'>Print</span>
+                  It
+                </motion.h1>
                         {/* menu section */}
                         {/* <motion.div
                         initial={{opacity:0, y:-100 }}
