@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CoffeeMain from './Images/lamp.png';
+import lamp from './Images/lamp.png';
 import Navbar from './Navbar/Navbar';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
@@ -63,13 +63,14 @@ function Home() {
                     <motion.img 
                     initial={{opacity:0, scale:0 }}
                     animate={{opacity:1, scale:1}}
+                    whileHover={{scale:1.05}}
                     transition={{
                         type:"spring",
                         stiffness:100,
                         damping:10,
-                        delay:0.4
+                        delay:0.1
                     }}
-                    src={CoffeeMain} alt="" className='relative z-40 h-[400px] md:h-[700px] img-shadow'></motion.img>
+                    src={lamp} alt="" className='relative z-40 h-[400px] md:h-[700px] img-shadow'></motion.img>
                     {/* orange circle ring */}
                     <motion.div
                     initial={{opacity:0, y:100 }}
