@@ -6,7 +6,10 @@ import star from '../Images/star.png';
 import Navbar from '../Navbar/Navbar';
 import { Button } from 'antd';
 import {motion} from 'framer-motion';
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { GiHamburgerMenu } from 'react-icons/gi';
+import GradientButton from '../GradientButton/GradientButton';
+import { FaShoppingCart } from 'react-icons/fa';
+
 
 const Details = () => {
   const { id } = useParams();
@@ -41,20 +44,12 @@ const Details = () => {
                   <span className='text-primary'>Print</span>
                   It
                 </motion.h1>
-                        {/* menu section */}
-                        {/* <motion.div
-                        initial={{opacity:0, y:-100 }}
-                        animate={{opacity:1, y: 0}}
-                        transition={{
-                            type:"spring",
-                            stiffness:100,
-                            damping:10,
-                            delay:0.2
-                        }}
-                        >
-                            <GiHamburgerMenu className='text-3xl cursor-pointer'></GiHamburgerMenu>
-                        </motion.div> */}
                     </div>
+                </div>
+
+                {/* Cart Icon */}
+                <div className='absolute top-4 right-4 cursor-pointer' onClick={() => navigate('/cart')}>
+                  <FaShoppingCart size={28} className='text-gray-700 hover:text-black'/>
                 </div>
       </nav>
 
@@ -120,7 +115,7 @@ const Details = () => {
 
       {/* Buttons */}
       <div className='flex justify-center items-center gap-6 p-6'>
-        <Button type="primary">Add to Cart</Button>
+        <GradientButton />
         <Button type="primary" onClick={() => navigate("/explore")}>Back</Button>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MODELS } from '../Data/Data';
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Explore = () => {
   const navigate = useNavigate();
@@ -30,6 +31,11 @@ const Explore = () => {
 
   return (
     <div>
+      {/* Cart Icon */}
+      <div className='absolute top-4 right-4 cursor-pointer' onClick={() => navigate('/cart')}>
+        <FaShoppingCart size={28} className='text-gray-700 hover:text-black'/>
+      </div>
+      
       <motion.h1 
         initial={{opacity:0, scale:0 }}
         animate={{opacity:1, scale:1}}
