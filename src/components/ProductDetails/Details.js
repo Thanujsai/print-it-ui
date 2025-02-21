@@ -5,7 +5,6 @@ import starUnfilled from '../Images/starUnfilled.png';
 import star from '../Images/star.png';
 import Navbar from '../Navbar/Navbar';
 import { Button } from 'antd';
-import ReactImageMagnify from 'react-image-magnify';
 import {motion} from 'framer-motion';
 import { GiHamburgerMenu } from 'react-icons/gi'
 
@@ -84,8 +83,8 @@ const Details = () => {
           ))}
         </div>
 
-        {/* Right Side: Magnifying Image */}
-        <motion.div
+                {/* Right Side: Normal Large Image */}
+                <motion.div
           initial={{ opacity: 0, y: 50, scale: 0 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
@@ -95,33 +94,11 @@ const Details = () => {
             mass: 0.8,
             delay: 0.8
           }}
-
         className="w-[400px] h-[400px]">
-          <ReactImageMagnify
-            {...{
-              smallImage: {
-                alt: product.title,
-                isFluidWidth: false,
-                width: 400, // Main image size
-                height: 400,
-                src: selectedImage,
-              },
-              largeImage: {
-                src: selectedImage,
-                width: 1000, // Zoomed image size
-                height: 1000,
-              },
-              enlargedImageContainerDimensions: {
-                width: 300,  // Medium-sized magnified display
-                height: 300,
-              },
-              lensStyle: {
-                width: 120,  // Medium-sized square zoom lens
-                height: 120,
-                backgroundColor: "rgba(0,0,0,0.2)",  // Semi-transparent effect
-              },
-              shouldUsePositiveSpaceLens: true,
-            }}
+          <img
+            src={selectedImage}
+            alt={product.title}
+            className="w-full h-full object-cover border border-gray-300"
           />
         </motion.div>
 
