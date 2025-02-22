@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MODELS } from '../Data/Data';
 import starUnfilled from '../Images/starUnfilled.png';
@@ -17,6 +17,10 @@ const Details = () => {
   const { id } = useParams();
   const product = MODELS.find((model) => model.id.toString() === id);
   const navigate = useNavigate();
+
+  useEffect(() => { 
+      window.scrollTo(0, 0); // Scroll to the top whenever the Home component is mounted
+  }, []);
 
   // State to track the selected image
   const [selectedImage, setSelectedImage] = useState(product?.image);
@@ -87,8 +91,8 @@ const Details = () => {
           ))}
         </div>
 
-                {/* Right Side: Normal Large Image */}
-                <motion.div
+        {/* Right Side: Normal Large Image */}
+        <motion.div
           initial={{ opacity: 0, y: 50, scale: 0 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
@@ -107,10 +111,10 @@ const Details = () => {
         </motion.div>
 
         {/* Product Details */}
-        <div>
-          <h1 className="text-xl font-bold">{product.title}</h1>
-          <h1 className="text-l">{product.info}</h1>
-          <h1 className="text-l font-bold">{product.price}</h1>
+        <div className='mb-[150px]'>
+          <h1 className="text-2xl font-medium pb-2">{product.title}</h1>
+          <h1 className="text-l font-bold pb-10">{product.price}</h1>
+          <h1 className="text-sm break-words w-80 whitespace-pre-wrap">{product.info}</h1>
           <div className="flex items-center mt-2">
             <img src={star} alt="star" className="w-6 h-6" />
             <img src={star} alt="star" className="w-6 h-6" />
@@ -119,14 +123,23 @@ const Details = () => {
             <img src={starUnfilled} alt="star" className="w-6 h-6" />
             <p className="ml-2">(122)</p>
           </div>
+          <div className='flex justify-center items-center pt-12 pr-20'>
+          <button 
+            onClick={handleAddToCart} 
+            className='bg-black text-white px-6 py-2 rounded-md transition-all duration-300 ease-in-out 
+            hover:text-white hover:shadow-lg hover:scale-105'>
+            Add to Cart
+          </button>
+          </div>
+
         </div>
       </div>
 
       {/* Buttons */}
-      <div className='flex justify-center items-center gap-6 p-6'>
+      {/* <div className='flex justify-center items-center gap-6 p-6'>
         <Button type="primary" onClick={handleAddToCart}>Add to Cart</Button>
         <Button type="primary" onClick={() => navigate("/explore")}>Back</Button>
-      </div>
+      </div> */}
     </div>
   );
 };
