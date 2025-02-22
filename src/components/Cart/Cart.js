@@ -1,6 +1,7 @@
 import { useCart } from "../CartContext";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
@@ -13,14 +14,41 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen p-6 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-6">Your Cart</h2>
+      <motion.h2
+        initial={{opacity:0, y:-100 }}
+        animate={{opacity:1, y: 0}}
+        transition={{
+          type:"spring",
+          stiffness:100,
+          damping:10,
+          delay:0.2
+        }}
+      className="text-3xl font-bold text-center mb-6">Your Cart</motion.h2>
 
       {cart.length === 0 ? (
-        <p className="text-center text-gray-500">Your cart is empty.</p>
+        <motion.p 
+          initial={{opacity:0, y:-100 }}
+          animate={{opacity:1, y: 0}}
+          transition={{
+            type:"spring",
+            stiffness:100,
+            damping:10,
+            delay:0.2
+          }}
+          className="text-center text-gray-500">Your cart is empty.</motion.p>
       ) : (
-        <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <motion.div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
           {cart.map((item, index) => (
-            <div key={index} className="flex items-center border-b py-4">
+            <motion.div 
+              initial={{opacity:0, x:-100 }}
+              animate={{opacity:1, x: 0}}
+              transition={{
+                type:"spring",
+                stiffness:100,
+                damping:10,
+                delay:0.4 + index * 0.1
+              }}
+              key={index} className="flex items-center border-b py-4">
               <img
                 src={item.image}
                 alt={item.title}
@@ -36,11 +64,20 @@ const Cart = () => {
               >
                 <FaTrashAlt size={20} />
               </button>
-            </div>
+            </motion.div>
           ))}
 
           {/* Total Price */}
-          <div className="flex justify-between items-center mt-6">
+          <motion.div
+            initial={{opacity:0, x:-100 }}
+            animate={{opacity:1, x: 0}}
+            transition={{
+              type:"spring",
+              stiffness:100,
+              damping:10,
+              delay:0.6 + cart.length * 0.1
+            }}
+          className="flex justify-between items-center mt-6">
             <h3 className="text-xl font-bold">Total: ${totalPrice}</h3>
             <button
               className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primaryDark transition"
@@ -48,8 +85,8 @@ const Cart = () => {
             >
               Checkout
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
 
       {/* Back Button */}

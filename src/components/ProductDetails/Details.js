@@ -161,7 +161,7 @@ const Details = () => {
             damping:10,
             delay:0.2
         }}
-        className='text-2xl font-semibold text-center py-10'>Suggested for you</motion.h1>
+        className='text-xl font-semibold text-center py-10'>SIMILAR PRODUCTS</motion.h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
           {MODELS.map((model) => (
             <motion.div
