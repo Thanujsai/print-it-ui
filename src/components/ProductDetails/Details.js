@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MODELS } from '../Data/Data';
 import starUnfilled from '../Images/starUnfilled.png';
@@ -11,11 +11,16 @@ import GradientButton from '../GradientButton/GradientButton';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useCart } from '../CartContext';
 import black from '../Images/black.png';
+import {ShiftingDropDown } from '../DetailsDropdown/Dropdown';
 
 const Details = () => {
   const { id } = useParams();
   const product = MODELS.find((model) => model.id.toString() === id);
   const navigate = useNavigate();
+
+  useEffect(() => { 
+      window.scrollTo(0, 0); // Scroll to the top whenever the Details component is mounted
+  }, []);
 
   // State to track the selected image
   const [selectedImage, setSelectedImage] = useState(product?.image);
@@ -54,7 +59,7 @@ const Details = () => {
                 </motion.h1>
                     </div>
                 </div>
-
+                <ShiftingDropDown />
                 {/* Cart Icon */}
                 <div className='absolute top-4 right-4 cursor-pointer' onClick={() => navigate('/cart')}>
                   <FaShoppingCart size={28} className='text-gray-700 hover:text-black'/>
@@ -86,8 +91,8 @@ const Details = () => {
           ))}
         </div>
 
-                {/* Right Side: Normal Large Image */}
-                <motion.div
+        {/* Right Side: Normal Large Image */}
+        <motion.div
           initial={{ opacity: 0, y: 50, scale: 0 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
@@ -106,10 +111,19 @@ const Details = () => {
         </motion.div>
 
         {/* Product Details */}
-        <div>
-          <h1 className="text-xl font-bold">{product.title}</h1>
-          <h1 className="text-l">{product.info}</h1>
-          <h1 className="text-l font-bold">{product.price}</h1>
+        <motion.div 
+        initial={{opacity:0, x:100 }}
+        animate={{opacity:1, x:0}}
+        transition={{
+            type:"spring",
+            stiffness:100,
+            damping:10,
+            delay:1
+        }}
+        className='mb-[150px]'>
+          <h1 className="text-2xl font-medium pb-2">{product.title}</h1>
+          <h1 className="text-l font-bold pb-10">{product.price}</h1>
+          <h1 className="text-sm break-words w-80 whitespace-pre-wrap">{product.info}</h1>
           <div className="flex items-center mt-2">
             <img src={star} alt="star" className="w-6 h-6" />
             <img src={star} alt="star" className="w-6 h-6" />
@@ -118,14 +132,64 @@ const Details = () => {
             <img src={starUnfilled} alt="star" className="w-6 h-6" />
             <p className="ml-2">(122)</p>
           </div>
-        </div>
+          <div className='flex justify-center items-center pt-12 pr-20'>
+          <button 
+            onClick={handleAddToCart} 
+            className='bg-black text-white px-6 py-2 rounded-md transition-all duration-300 ease-in-out 
+            hover:text-white hover:shadow-lg hover:scale-105'>
+            Add to Cart
+          </button>
+          </div>
+
+        </motion.div>
       </div>
 
       {/* Buttons */}
-      <div className='flex justify-center items-center gap-6 p-6'>
+      {/* <div className='flex justify-center items-center gap-6 p-6'>
         <Button type="primary" onClick={handleAddToCart}>Add to Cart</Button>
         <Button type="primary" onClick={() => navigate("/explore")}>Back</Button>
-      </div>
+      </div> */}
+
+      {/*suggested content */}
+      <div className='container'>
+        <motion.h1
+        initial={{opacity:0, y:100 }}
+        animate={{opacity:1, y:0}}
+        transition={{
+            type:"spring",
+            stiffness:100,
+            damping:10,
+            delay:0.2
+        }}
+        className='text-xl font-semibold text-center py-10'>SIMILAR PRODUCTS</motion.h1>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+          {MODELS.map((model) => (
+            <motion.div
+              key={model.id}
+              initial={{ opacity: 0, x: 10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.1 }}
+              onTap={() => {
+                navigate(`/details/${model.id}`);
+                setSelectedImage(model.image);//when an image is selected from suggested content, that image must be shown in the main big image section
+                window.scrollTo(0, 0); // Scroll to the top
+              }}
+              className='p-4 border rounded shadow-sm space-y-2 cursor-pointer'
+            >
+              <img src={model.image} alt={model.title} className='h-[240px] w-full object-cover' />
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className='text-xl font-medium'>{model.title}</p>
+                  <p className='text-gray-500'>{model.category}</p>
+                </div>
+                <div>
+                  <p className='text-gray-500'>{model.price}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+    </div>
     </div>
   );
 };

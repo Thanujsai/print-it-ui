@@ -16,7 +16,7 @@ const servicesData = [
   {
     id: 2,
     image: Gaming,
-    title: "Gaming Accessories",
+    title: "Gadgets & Accessories",
     category: "Gadgets & Accessories",
     subtitle: "Upgrade your gaming setup with 3D-printed accessories like dice towers, controller stands, and more. Designed for gamers who value both style and functionality."
   },
