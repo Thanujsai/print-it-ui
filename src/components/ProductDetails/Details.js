@@ -19,7 +19,7 @@ const Details = () => {
   const navigate = useNavigate();
 
   useEffect(() => { 
-      window.scrollTo(0, 0); // Scroll to the top whenever the Home component is mounted
+      window.scrollTo(0, 0); // Scroll to the top whenever the Details component is mounted
   }, []);
 
   // State to track the selected image
@@ -149,6 +149,47 @@ const Details = () => {
         <Button type="primary" onClick={handleAddToCart}>Add to Cart</Button>
         <Button type="primary" onClick={() => navigate("/explore")}>Back</Button>
       </div> */}
+
+      {/*suggested content */}
+      <div className='container'>
+        <motion.h1
+        initial={{opacity:0, y:100 }}
+        animate={{opacity:1, y:0}}
+        transition={{
+            type:"spring",
+            stiffness:100,
+            damping:10,
+            delay:0.2
+        }}
+        className='text-2xl font-semibold text-center py-10'>Suggested for you</motion.h1>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+          {MODELS.map((model) => (
+            <motion.div
+              key={model.id}
+              initial={{ opacity: 0, x: 10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.1 }}
+              onTap={() => {
+                navigate(`/details/${model.id}`);
+                setSelectedImage(model.image);//when an image is selected from suggested content, that image must be shown in the main big image section
+                window.scrollTo(0, 0); // Scroll to the top
+              }}
+              className='p-4 border rounded shadow-sm space-y-2 cursor-pointer'
+            >
+              <img src={model.image} alt={model.title} className='h-[240px] w-full object-cover' />
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className='text-xl font-medium'>{model.title}</p>
+                  <p className='text-gray-500'>{model.category}</p>
+                </div>
+                <div>
+                  <p className='text-gray-500'>{model.price}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+    </div>
     </div>
   );
 };
