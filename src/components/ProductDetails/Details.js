@@ -9,7 +9,8 @@ import {motion} from 'framer-motion';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import GradientButton from '../GradientButton/GradientButton';
 import { FaShoppingCart } from 'react-icons/fa';
-
+import { useCart } from '../CartContext';
+import black from '../Images/black.png';
 
 const Details = () => {
   const { id } = useParams();
@@ -18,6 +19,13 @@ const Details = () => {
 
   // State to track the selected image
   const [selectedImage, setSelectedImage] = useState(product?.image);
+
+  const { addToCart } = useCart();//This extracts the addToCart function from the useCart context.
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    navigate('/cart');  // Navigate after adding
+  };
 
   if (!product) {
     return <div className="text-center text-red-500">Product not found</div>;
@@ -59,7 +67,7 @@ const Details = () => {
         {/* Left Side: Stacked Small Images */}
         <div 
         className="flex flex-col gap-3">
-          {[product.image, product.image, product.image, product.image].map((img, index) => (
+          {[product.image, product.image, product.image, product.image, black].map((img, index) => (
             <motion.img
               initial={{opacity:0, scale:0 }}
               animate={{opacity:1, scale:1}}
@@ -115,7 +123,7 @@ const Details = () => {
 
       {/* Buttons */}
       <div className='flex justify-center items-center gap-6 p-6'>
-        <GradientButton />
+        <Button type="primary" onClick={handleAddToCart}>Add to Cart</Button>
         <Button type="primary" onClick={() => navigate("/explore")}>Back</Button>
       </div>
     </div>

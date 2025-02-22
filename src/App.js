@@ -29,6 +29,9 @@ import MainPage from './components/MainPage.js';
 import Explore from './components/Explore/Explore.js';
 import Details from './components/ProductDetails/Details.js';
 import Profile from './Test.js';
+import Cart from './components/Cart/Cart.js';
+import { CartProvider } from './components/CartContext';
+
 
 function App() {
 
@@ -37,6 +40,7 @@ function App() {
   }, []);
 
   return (
+    <CartProvider>
     <Router>
       <div className="app">
         <main className="main-content">
@@ -58,6 +62,7 @@ function App() {
             <Route path="/draggable" element={<DraggableDiv />} />
             <Route path="/variants" element={<Variants />} />
             <Route path="/details/:id" element={<Details />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/thanuj" element={<Profile />} />
             {/* <Route path="/about" element={<About />} /> */}
             {/* Add more routes as needed */}
@@ -66,6 +71,7 @@ function App() {
         {/* <Footer /> */}
       </div>
     </Router>
+    </CartProvider>
   );
 }
 
