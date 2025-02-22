@@ -111,7 +111,16 @@ const Details = () => {
         </motion.div>
 
         {/* Product Details */}
-        <div className='mb-[150px]'>
+        <motion.div 
+        initial={{opacity:0, x:100 }}
+        animate={{opacity:1, x:0}}
+        transition={{
+            type:"spring",
+            stiffness:100,
+            damping:10,
+            delay:1
+        }}
+        className='mb-[150px]'>
           <h1 className="text-2xl font-medium pb-2">{product.title}</h1>
           <h1 className="text-l font-bold pb-10">{product.price}</h1>
           <h1 className="text-sm break-words w-80 whitespace-pre-wrap">{product.info}</h1>
@@ -132,7 +141,7 @@ const Details = () => {
           </button>
           </div>
 
-        </div>
+        </motion.div>
       </div>
 
       {/* Buttons */}
