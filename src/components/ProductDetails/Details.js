@@ -11,6 +11,7 @@ import GradientButton from '../GradientButton/GradientButton';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useCart } from '../CartContext';
 import black from '../Images/black.png';
+import {ShiftingDropDown } from '../DetailsDropdown/Dropdown';
 
 const Details = () => {
   const { id } = useParams();
@@ -54,7 +55,7 @@ const Details = () => {
                 </motion.h1>
                     </div>
                 </div>
-
+                <ShiftingDropDown />
                 {/* Cart Icon */}
                 <div className='absolute top-4 right-4 cursor-pointer' onClick={() => navigate('/cart')}>
                   <FaShoppingCart size={28} className='text-gray-700 hover:text-black'/>
