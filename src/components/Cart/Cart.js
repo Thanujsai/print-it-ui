@@ -2,6 +2,7 @@ import { useCart } from "../CartContext";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
@@ -10,7 +11,7 @@ const Cart = () => {
   // Calculate total price
   const totalPrice = cart
     .reduce((acc, item) => acc + parseFloat(item.price.replace("$", "")), 0)
-    .toFixed(2);
+    .toFixed(2);//whenever cart array is updated, this field is re-calculated
 
   return (
     <div className="min-h-screen p-6 bg-gray-100">
@@ -60,7 +61,23 @@ const Cart = () => {
               </div>
               <button
                 className="text-red-500 hover:text-red-700"
-                onClick={() => removeFromCart(item.id)}
+                onClick={() => {
+                  Swal.fire({
+                    title: "Remove Item?",
+                    text: "Are you sure you want to remove this item from your cart?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, remove it!",
+                    cancelButtonText: "Cancel",
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      removeFromCart(item.id);
+                      Swal.fire("Removed!", "The item has been removed from your cart.", "success");
+                    }
+                  });
+                }}
               >
                 <FaTrashAlt size={20} />
               </button>

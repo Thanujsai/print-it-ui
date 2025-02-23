@@ -12,6 +12,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { useCart } from '../CartContext';
 import black from '../Images/black.png';
 import {ShiftingDropDown } from '../DetailsDropdown/Dropdown';
+import Swal from "sweetalert2";
+
 
 const Details = () => {
   const { id } = useParams();
@@ -29,8 +31,16 @@ const Details = () => {
 
   const handleAddToCart = () => {
     addToCart(product);
-    navigate('/cart');  // Navigate after adding
+    Swal.fire({
+      title: "🎉 Added to Cart!",
+      text: "This item has been added to your cart. You can continue shopping or check out anytime!",
+      icon: "success",
+      confirmButtonText: "Got it!",
+      timer: 5000, // Auto-close after 5 seconds
+      showCloseButton: true,
+    });
   };
+  
 
   if (!product) {
     return <div className="text-center text-red-500">Product not found</div>;

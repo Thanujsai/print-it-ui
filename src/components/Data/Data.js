@@ -15,6 +15,12 @@ import mickeyMouse from "../Images/tabs/Models/toys/mickeyMouse.jpg";
 import tom from "../Images/tabs/Models/toys/tom.png";
 import dice from "../Images/tabs/Models/toys/dice.jpg";
 import koala from "../Images/tabs/Models/toys/koala.jpg";
+import mechanicalHand from "../Images/tabs/Models/gadgets/mechanical_hand.jpg";
+import face from "../Images/tabs/Models/arts/face.jpg";
+import gear from "../Images/tabs/Models/mechanicalParts/gear.jpg";
+import wrench from "../Images/tabs/Models/mechanicalParts/wrench.jpg";
+import tools from "../Images/tabs/Models/mechanicalParts/tools.jpg";
+
 
 export const MODELS = [
     {
@@ -52,7 +58,7 @@ export const MODELS = [
     {
         id: 5,
         category: "Mechanical Parts",
-        image: Image1,
+        image: gear,
         title: "Custom Gear",
         info: "A durable 3D-printed mechanical gear for various applications, designed for precision and strength.",
         price: "$100",
@@ -84,15 +90,15 @@ export const MODELS = [
     {
         id: 9,
         category: "Gadgets & Accessories",
-        image: fan,
-        title: "USB Fan",
-        info: "A small but powerful 3D-printed USB-powered fan for your desk or workspace.",
+        image: mechanicalHand,
+        title: "Mechanical Hand",
+        info: "A highly detailed, 3D-printed mechanical hand designed for robotics enthusiasts, prosthetic prototypes, or educational demonstrations. Featuring articulated fingers and realistic movement, this model showcases the precision and versatility of 3D printing technology.",
         price: "$100",
     },
     {
         id: 10,
         category: "Art & Sculptures",
-        image: Image3,
+        image: face,
         title: "Abstract Art Piece",
         info: "An intricate 3D-printed sculpture that serves as a unique conversation starter in any room.",
         price: "$100",
@@ -100,7 +106,7 @@ export const MODELS = [
     {
         id: 11,
         category: "Mechanical Parts",
-        image: Image3,
+        image: wrench,
         title: "Precision Gear",
         info: "A precisely engineered 3D-printed gear designed for durability and efficiency in machinery.",
         price: "$100",
@@ -148,7 +154,7 @@ export const MODELS = [
     {
         id: 17,
         category: "Mechanical Parts",
-        image: Image3,
+        image: tools,
         title: "Industrial Cog",
         info: "A strong and durable 3D-printed cog used in various mechanical applications.",
         price: "$100",
