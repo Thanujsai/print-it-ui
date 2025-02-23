@@ -36,10 +36,17 @@ const Details = () => {
       text: "This item has been added to your cart. You can continue shopping or check out anytime!",
       icon: "success",
       confirmButtonText: "Got it!",
+      cancelButtonText: "🛒 Go to Cart",
       timer: 5000, // Auto-close after 5 seconds
       showCloseButton: true,
+      showCancelButton: true,
+    }).then((result) => {
+      if(result.dismiss === Swal.DismissReason.cancel) {
+        navigate("/cart")// Navigate to cart if "Go to Cart" is clicked
+      }
     });
   };
+  /*.then is used because Swal.fire returns a Promise. When the modal is displayed, it waits for the user to interact with it—like clicking a button or closing it. Once the user takes an action, the Promise resolves with an object that details the result of that interaction. The .then method allows you to run code based on that result, such as navigating to the cart if the user clicks "Go to Cart."*/
   
 
   if (!product) {
